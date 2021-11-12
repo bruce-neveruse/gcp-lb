@@ -23,26 +23,35 @@ scripts to create gap load balancer
 
 ## SSH TO WEB SERVER VM AND INSTALL APACHE2
 sudo apt-get update
+
 sudo apt-get install apache2 openssl
 
 sudo a2enmod ssl
+
 sudo a2enmod rewrite
  
 sudo nano /etc/apache2/apache2.conf
+
 <Directory /var/www/html>
+
 AllowOverride All
+
 </Directory>
+
 
 ## CREATE CERT
 sudo mkdir /etc/apache2/certificate
-cd /etc/apache2/certificate
-sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
 
+cd /etc/apache2/certificate
+
+sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
 
 sudo nano /etc/apache2/sites-enabled/000-default.conf
 
 ## ADD THIS AND COMMENT WHATS THERE
+
 <VirtualHost *:443>
+
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/html
         ErrorLog ${APACHE_LOG_DIR}/error.log
