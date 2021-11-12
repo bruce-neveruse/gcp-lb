@@ -12,12 +12,12 @@ sudo apt-get install apache2 openssl
 ```
 sudo a2enmod ssl
 sudo a2enmod rewrite
-``` 
 sudo nano /etc/apache2/apache2.conf
 ```
- <Directory /var/www/html>
- 	AllowOverride All
-  </Directory>
+```
+<Directory /var/www/html>
+	AllowOverride All
+</Directory>
 ```
 
 ### CREATE CERT
