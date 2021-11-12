@@ -13,3 +13,18 @@ gcloud compute backend-services add-backend backend \
 
 gcloud compute url-maps create web-map-https \
     --default-service backend
+
+# Create Cert
+gcloud compute ssl-certificates create hmlb-cert \
+    --domains=hmlb.ddns.net \
+    --global
+
+gcloud compute target-https-proxies create https-lb-proxy \
+    --url-map=web-map-https \
+    --ssl-certificates=hmlb-cert    
+
+gcloud compute forwarding-rules create https-content-rule \
+    --address=lb-ipv4-1 \
+    --global \
+    --target-https-proxy=https-lb-proxy \
+    --ports=443
