@@ -13,8 +13,3 @@ gcloud compute --project $PROJECT health-checks create https "https-healthcheck"
 gcloud beta compute --project=$PROJECT instance-groups managed create web-server-instance-group-use4 --base-instance-name=web-server-instance-group-use4 --template=web-server-instance-template --size=1 --zone=us-east4-c --health-check=https-healthcheck --initial-delay=300
 gcloud beta compute --project $PROJECT instance-groups managed set-autoscaling "web-server-instance-group-use4" --zone "us-east4-c" --cool-down-period "60" --max-num-replicas "2" --min-num-replicas "1" --target-cpu-utilization "0.6" --mode "on"
 
-#CLOUD ARMOUR POLICY
-gcloud compute --project=$PROJECT security-policies create hm-access --description="only allow 157.154.3.140, 167.164.3.140, and lab proxy 157.154.3.241"                                                 
-gcloud compute --project=$PROJECT security-policies rules create 0 --action=allow --security-policy=hm-access --src-ip-ranges=157.154.3.140,167.164.3.140,157.154.3.241                                   
-gcloud compute --project=$PROJECT security-policies rules create 2147483647 --action=deny-403 --security-policy=hm-access --description="Default rule, higher priority overrides it" --src-ip-ranges=\*
-gcloud compute --project=$PROJECT backend-services update backend --security-policy=hm-access
