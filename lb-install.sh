@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcloud compute backend-services create backend \
+gcloud compute --project=$PROJECT backend-services create backend \
     --protocol=HTTPS \
     --port-name=https \
     --health-checks=healthcheck \
