@@ -2,7 +2,7 @@
 
 ## RUN AFTER LB IS CREATED
 
-export PROJECT=playground-s-11-823a116c
+export PROJECT= <ENTER PROJECT ID>
 
 #CLOUD ARMOUR POLICY
 gcloud compute --project=$PROJECT security-policies create hm-access --description="only allow 157.154.3.140, 167.164.3.140, and lab proxy 157.154.3.241"
