@@ -48,6 +48,12 @@ sudo service apache2 restart
 ```
 ** SHOULD BE ABLE TO TEST WITHOUT LB NOW 
 
+### Run lb-install.sh
+
+```
+./lb-install.sh
+```
+or
 
 ### MANUALLY CREATE LB IN [GOOGLE CLOUD CONSOLE](https://console.cloud.google.com/net-services/loadbalancing/add/https?:target="_blank")
 
