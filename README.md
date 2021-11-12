@@ -1,20 +1,19 @@
-# gcp-lb
+## gcp-lb Instructions
 scripts to create gcp load balancer
 
 
-## CHANGE PROJECT NAME AND SERVICE ACCOUNT IN web-svr-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
+### CHANGE PROJECT NAME AND SERVICE ACCOUNT IN web-svr-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
 
-## SSH TO WEB SERVER VM AND INSTALL APACHE2
+### SSH TO WEB SERVER VM AND INSTALL APACHE2
+```
 sudo apt-get update
-
 sudo apt-get install apache2 openssl
-
+```
+```
 sudo a2enmod ssl
-
 sudo a2enmod rewrite
- 
+``` 
 sudo nano /etc/apache2/apache2.conf
-
 ```
  <Directory /var/www/html>
  	AllowOverride All
@@ -22,12 +21,13 @@ sudo nano /etc/apache2/apache2.conf
 ```
 
 ### CREATE CERT
+```
 sudo mkdir /etc/apache2/certificate
-
 cd /etc/apache2/certificate
-
+```
+```
 sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
-
+```
 sudo nano /etc/apache2/sites-enabled/000-default.conf
 
 ### ADD THIS AND COMMENT WHATS THERE
@@ -45,9 +45,11 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
 sudo service apache2 restart
 
 ### SHOULD BE ABLE TO TEST WITHOUT LB NOW
+
 ### CREATE LB
+
 ### CHANGE DNS IN my.noip.com  -- FQDN HAS TO MATCH BETWEEN LB CERT AND WEB SERVER CERT
 hmlb.ddns.net
 
-## CHANGE PROJECT NAME IN cloud-armour-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
+### CHANGE PROJECT NAME IN cloud-armour-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
 
