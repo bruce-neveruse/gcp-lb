@@ -6,7 +6,7 @@ scripts to create gap load balancer
 
 =================================================================================================================================================================================================================================================================
 
-## CHANGE PROJECT NAME IN web-svr-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
+## CHANGE PROJECT NAME AND SERVICE ACCOUNT IN web-svr-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
 
 ## INSTANCE TEMPLATE
 --------gcloud beta compute --project=playground-s-11-823a116c instance-templates create web-server-instance-template --machine-type=f1-micro --network=projects/playground-s-11-823a116c/global/networks/default --network-tier=PREMIUM --maintenance-policy=MIGRATE --service-account=822951814305-compute@developer.gserviceaccount.com --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append --tags=http-server,https-server --image=debian-10-buster-v20211105 --image-project=debian-cloud --boot-disk-size=10GB --boot-disk-type=pd-balanced --boot-disk-device-name=web-server-instance-template --no-shielded-secure-boot --no-shielded-vtpm --no-shielded-integrity-monitoring --reservation-affinity=any
