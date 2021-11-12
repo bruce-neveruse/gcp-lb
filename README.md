@@ -43,11 +43,13 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
         SSLCertificateKeyFile /etc/apache2/certificate/apache.key
 </VirtualHost>
 ```
+```
 sudo service apache2 restart
-
+```
 ### SHOULD BE ABLE TO TEST WITHOUT LB NOW
 
-### CREATE LB
+### MANUALLY CREATE LB IN CLOUD CONSOLE
+https://console.cloud.google.com/net-services/loadbalancing/add?
 
 ### CHANGE DNS IN my.noip.com  -- FQDN HAS TO MATCH BETWEEN LB CERT AND WEB SERVER CERT
 hmlb.ddns.net
