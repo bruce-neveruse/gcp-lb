@@ -48,8 +48,7 @@ sudo service apache2 restart
 ```
 ### SHOULD BE ABLE TO TEST WITHOUT LB NOW
 
-### MANUALLY CREATE LB IN CLOUD CONSOLE
-https://console.cloud.google.com/net-services/loadbalancing/add?
+### MANUALLY CREATE LB IN [CLOUD CONSOLE](https://console.cloud.google.com/net-services/loadbalancing/add/https?:target="_blank")
 
 ### CHANGE DNS IN my.noip.com  -- FQDN HAS TO MATCH BETWEEN LB CERT AND WEB SERVER CERT
 hmlb.ddns.net
