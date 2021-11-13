@@ -6,12 +6,6 @@ scripts to create gcp load balancer
 
 ### SSH TO WEB SERVER VM AND INSTALL APACHE2
 ```
-sudo apt-get update
-sudo apt-get install apache2 openssl
-```
-```
-sudo a2enmod ssl
-sudo a2enmod rewrite
 sudo nano /etc/apache2/apache2.conf
 ```
 ```
@@ -48,7 +42,7 @@ sudo service apache2 restart
 ```
 ** SHOULD BE ABLE TO TEST WITHOUT LB NOW 
 
-### Run lb-install.sh
+### FROM CLOUD SHELL, RUN lb-install.sh
 
 ```
 ./lb-install.sh
