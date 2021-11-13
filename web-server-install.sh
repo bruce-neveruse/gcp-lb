@@ -36,5 +36,11 @@ gcloud beta compute --project $PROJECT instance-groups managed set-autoscaling "
 
 # CREATE FW RULES
 gcloud compute --project=$PROJECT firewall-rules create allow-https-ssh-ingress --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
-
+gcloud compute firewall-rules create fw-allow-health-check \
+    --network=default \
+    --action=allow \
+    --direction=ingress \
+    --source-ranges=130.211.0.0/22,35.191.0.0/16 \
+    --target-tags=allow-health-check \
+    --rules=tcp:80
 
