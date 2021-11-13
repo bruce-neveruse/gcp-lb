@@ -3,7 +3,7 @@
 gcloud compute backend-services create backend \
     --protocol=HTTPS \
     --port-name=https \
-    --health-checks=healthcheck \
+    --health-checks=https-healthcheck \
     --global
 
 gcloud compute backend-services add-backend backend \
