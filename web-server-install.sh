@@ -19,6 +19,7 @@ gcloud beta compute --project=$PROJECT instance-templates create web-server-inst
      apt-get install apache2 -y
      a2ensite default-ssl
      a2enmod ssl
+     a2enmod rewrite
      vm_hostname="$(curl -H "Metadata-Flavor:Google" \
      http://169.254.169.254/computeMetadata/v1/instance/name)"
      echo "Page served from: $vm_hostname" | \
