@@ -10,7 +10,7 @@ sudo chmod 757 *.sh
 
 ### IN CLOUD SHELL EDITOR, CHANGE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
 ```
-./web-svr-install.sh
+./web-server-install.sh
 ```
 
 ###  SSH TO WEB SERVER VM FROM [COMPUTE INSTANCES](https://console.cloud.google.com/compute/instances?:target="_blank") AND UPDATE APACHE2.CONF
