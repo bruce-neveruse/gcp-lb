@@ -51,7 +51,7 @@ sudo service apache2 restart
 ```
 ** SHOULD BE ABLE TO TEST WITHOUT LB NOW 
 
-### FROM CLOUD SHELL, RUN lb-install.sh
+### RETURN TO CLOUD SHELL AND RUN lb-install.sh
 
 ```
 ./lb-install.sh
