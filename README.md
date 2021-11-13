@@ -4,7 +4,7 @@ scripts to create gcp load balancer
 
 ### CHANGE PROJECT NAME AND SERVICE ACCOUNT IN web-svr-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
 
-### SSH TO WEB SERVER VM AND INSTALL APACHE2
+### SSH TO WEB SERVER VM AND UPDATE APACHE2.CONF
 ```
 sudo nano /etc/apache2/apache2.conf
 ```
