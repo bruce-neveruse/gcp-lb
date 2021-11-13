@@ -23,6 +23,10 @@ gcloud compute target-https-proxies create https-lb-proxy \
     --url-map=hmlb \
     --ssl-certificates=hmlb-cert    
 
+gcloud compute addresses create lb-ipv4-1 \
+    --ip-version=IPV4 \
+    --global
+    
 gcloud compute forwarding-rules create https-content-rule \
     --address=lb-ipv4-1 \
     --global \
