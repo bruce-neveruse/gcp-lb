@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export PROJECT=playground-s-11-05f51262
-export PROJECTNUM=96324927968
+export PROJECT=
+export PROJECTNUM=
 
 gcloud config set project $PROJECT
 
