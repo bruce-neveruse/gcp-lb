@@ -15,16 +15,16 @@ gcloud beta compute --project=$PROJECT instance-templates create web-server-inst
    --image-family=debian-9 \
    --image-project=debian-cloud \
    --metadata=startup-script='#! /bin/bash
-     apt-get update
-     apt-get install apache2 -y
-     a2ensite default-ssl
-     a2enmod ssl
-     a2enmod rewrite
+     sudo apt-get update
+     sudo apt-get install apache2 -y
+     sudo a2ensite default-ssl
+     sudo a2enmod ssl
+     sudo a2enmod rewrite
      vm_hostname="$(curl -H "Metadata-Flavor:Google" \
      http://169.254.169.254/computeMetadata/v1/instance/name)"
      echo "Page served from: $vm_hostname" | \
      tee /var/www/html/index.html
-     systemctl restart apache2'
+     sudo systemctl restart apache2'
 
 
 # CREATE HEALTHCHECK
