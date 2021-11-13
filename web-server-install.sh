@@ -11,7 +11,7 @@ gcloud beta compute --project=$PROJECT instance-templates create web-server-inst
  --region=us-east4 \
    --network=default \
    --subnet=default \
-   --tags=allow-health-check \
+   --tags=allow-health-check,https-server,http-server \
    --image-family=debian-9 \
    --image-project=debian-cloud \
    --metadata=startup-script='#! /bin/bash
