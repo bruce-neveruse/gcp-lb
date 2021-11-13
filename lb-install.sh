@@ -11,7 +11,7 @@ gcloud compute backend-services add-backend backend \
     --instance-group-zone=us-east4-c \
     --global
 
-gcloud compute url-maps create web-map-https \
+gcloud compute url-maps create hmlb \
     --default-service backend
 
 # Create Cert
@@ -20,7 +20,7 @@ gcloud compute ssl-certificates create hmlb-cert \
     --global
 
 gcloud compute target-https-proxies create https-lb-proxy \
-    --url-map=web-map-https \
+    --url-map=hmlb \
     --ssl-certificates=hmlb-cert    
 
 gcloud compute forwarding-rules create https-content-rule \
