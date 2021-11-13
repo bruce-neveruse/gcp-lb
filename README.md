@@ -8,9 +8,12 @@ cd gcp-lb
 sudo chmod 757 *.sh
 ```
 
-### CHANGE PROJECT NAME AND NUMBER IN web-svr-install.sh SCRIPT AND RUN IN CLOUD SHELL
+### IN CLOUD SHELL EDITOR, CHANGE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
+```
+./web-svr-install.sh
+```
 
-### SSH TO WEB SERVER VM AND UPDATE APACHE2.CONF
+###  SSH TO WEB SERVER VM FROM [COMPUTE INSTANCES](https://console.cloud.google.com/compute/instances?:target="_blank") AND UPDATE APACHE2.CONF
 ```
 sudo nano /etc/apache2/apache2.conf
 ```
@@ -31,7 +34,7 @@ sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apach
 ```
 sudo nano /etc/apache2/sites-enabled/000-default.conf
 ```
-### ADD THIS AND YOU CAN REMOVE OR COMMENT WHATS THERE
+### PASTE THE FOLLOWING AND REMOVE OR COMMENT THE EXISTING LINES
 ```
 <VirtualHost *:443>
         ServerAdmin webmaster@localhost
