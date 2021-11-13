@@ -3,7 +3,7 @@ scripts to create gcp load balancer
 
 ### CONNECT TO CLOUD SHELL AND CLONE THE REPO
 ```
-git clone 
+git clone https://github.com/bruce-neveruse/gcp-lb.git
 ```
 
 ### CHANGE PROJECT NAME AND SERVICE ACCOUNT IN web-svr-install.sh SCRIPT AND RUN IN CLOUD CONSOLE GCLOUD
