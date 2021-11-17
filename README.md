@@ -1,4 +1,4 @@
-## gcp-lb Instructions
+# gcp-lb Instructions
 scripts to create gcp load balancer
 
 ### CONNECT TO CLOUD SHELL AND CLONE THE REPO
