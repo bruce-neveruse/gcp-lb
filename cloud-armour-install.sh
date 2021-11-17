@@ -2,7 +2,8 @@
 
 ## RUN AFTER LB IS CREATED
 
-export PROJECT=playground-s-11-ee6d964f
+export PROJECT=$(gcloud projects list --filter playground | grep 'PROJECT_ID: playground' | cut -d ":" -f2 2> /dev/null)
+export PROJECTNUM=$(gcloud projects list --filter playground | grep PROJECT_NUMBER: | cut -d ":" -f2 2> /dev/null)
 
 #CLOUD ARMOUR POLICY
 gcloud compute --project=$PROJECT security-policies create hm-access --description="only allow 157.154.3.140, 167.164.3.140, and lab proxy 157.154.3.241"
