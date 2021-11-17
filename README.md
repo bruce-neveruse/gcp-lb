@@ -6,6 +6,7 @@ scripts to create gcp load balancer
 git clone https://github.com/bruce-neveruse/gcp-lb.git
 cd gcp-lb
 sudo chmod 757 *.sh
+gcloud projects list
 ```
 
 ### IN CLOUD SHELL EDITOR, CHANGE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
