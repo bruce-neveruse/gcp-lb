@@ -59,7 +59,7 @@ sudo service apache2 restart
 ```
 or
 
-### MANUALLY CREATE LB IN [GOOGLE CLOUD CONSOLE](https://console.cloud.google.com/net-services/loadbalancing/add/https?:target="_blank")
+### IF SCRIPT FAILS, MANUALLY CREATE LB IN [GOOGLE CLOUD CONSOLE](https://console.cloud.google.com/net-services/loadbalancing/add/https?:target="_blank")
 
 ### CHANGE DNS IN my.noip.com  -- FQDN HAS TO MATCH BETWEEN LB CERT AND WEB SERVER CERT
 hmlb.ddns.net
@@ -67,4 +67,7 @@ hmlb.ddns.net
 ### RETURN TO CLOUD SHELL AND RUN cloud-armour-install.sh
 ```
 ./cloud-armour-install.sh
+```
+
+
 
