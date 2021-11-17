@@ -64,4 +64,7 @@ or
 ### CHANGE DNS IN my.noip.com  -- FQDN HAS TO MATCH BETWEEN LB CERT AND WEB SERVER CERT
 hmlb.ddns.net
 
+### RETURN TO CLOUD SHELL AND RUN cloud-armour-install.sh
+```
+./cloud-armour-install.sh
 
