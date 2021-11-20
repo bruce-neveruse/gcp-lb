@@ -1,5 +1,5 @@
 # gcp-lb Instructions
-scripts to create gcp load balancer
+See steps below to create a gcp load balancer and cloud armour policy.  Feel free to edit any of the shell scripts to match your specific needs.
 
 ### CONNECT TO CLOUD SHELL AND CLONE THE REPO
 ```
