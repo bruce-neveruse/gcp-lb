@@ -9,7 +9,7 @@ sudo chmod 757 *.sh
 gcloud projects list
 ```
 
-### ! ONLY IF NOT ACLOUD GURU ! - IN CLOUD SHELL EDITOR, CHANGE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
+### IN CLOUD SHELL EDITOR, UPDATE THE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
 ```
 ./web-server-install.sh
 ```
