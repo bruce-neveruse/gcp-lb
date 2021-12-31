@@ -9,7 +9,7 @@ sudo chmod 757 *.sh
 gcloud projects list
 ```
 
-### IN CLOUD SHELL EDITOR, UPDATE THE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
+### IN CLOUD SHELL EXECUTE web-svr-install.sh
 ```
 ./web-server-install.sh
 ```
