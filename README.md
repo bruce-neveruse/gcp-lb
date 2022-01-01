@@ -7,6 +7,7 @@ git clone https://github.com/bruce-neveruse/gcp-lb.git
 cd gcp-lb
 sudo chmod 757 *.sh
 gcloud projects list
+
 ```
 
 ### IN CLOUD SHELL EXECUTE web-svr-install.sh
