@@ -1,6 +1,4 @@
 #!/bin/bash
-#export PROJECT=
-#export PROJECTNUM=
 
 export PROJECT=$(gcloud projects list --filter playground | grep 'PROJECT_ID: playground' | cut -d ":" -f2 2> /dev/null)
 export PROJECTNUM=$(gcloud projects list --filter playground | grep PROJECT_NUMBER: | cut -d ":" -f2 2> /dev/null)
