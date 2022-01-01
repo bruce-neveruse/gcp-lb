@@ -24,10 +24,11 @@ sudo nano /etc/apache2/apache2.conf
 </Directory>
 ```
 
-### CREATE CERT
+### CREATE CERT SCRIPT
 ```
 ./create-cert.sh
 ```
+### OR COPY PASTE THESE COMMANDS
 ```
 sudo mkdir /etc/apache2/certificate
 cd /etc/apache2/certificate
