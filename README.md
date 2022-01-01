@@ -1,5 +1,5 @@
-## gcp-lb Instructions
-scripts to create gcp load balancer
+# gcp-lb Instructions
+See steps below to create a gcp load balancer and cloud armour policy.  Feel free to edit any of the shell scripts to match your specific needs.
 
 ### CONNECT TO CLOUD SHELL AND CLONE THE REPO
 ```
@@ -9,7 +9,7 @@ sudo chmod 757 *.sh
 gcloud projects list
 ```
 
-### IN CLOUD SHELL EDITOR, CHANGE PROJECT NAME AND NUMBER IN web-svr-install.sh AND EXECUTE
+### IN CLOUD SHELL EXECUTE web-svr-install.sh
 ```
 ./web-server-install.sh
 ```
@@ -59,7 +59,7 @@ sudo service apache2 restart
 ```
 or
 
-### MANUALLY CREATE LB IN [GOOGLE CLOUD CONSOLE](https://console.cloud.google.com/net-services/loadbalancing/add/https?:target="_blank")
+### IF SCRIPT FAILS, MANUALLY CREATE LB IN [GOOGLE CLOUD CONSOLE](https://console.cloud.google.com/net-services/loadbalancing/add/https?:target="_blank")
 
 ### CHANGE DNS IN my.noip.com  -- FQDN HAS TO MATCH BETWEEN LB CERT AND WEB SERVER CERT
 hmlb.ddns.net
@@ -67,4 +67,7 @@ hmlb.ddns.net
 ### RETURN TO CLOUD SHELL AND RUN cloud-armour-install.sh
 ```
 ./cloud-armour-install.sh
+```
+
+
 
