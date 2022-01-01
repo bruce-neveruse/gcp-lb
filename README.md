@@ -7,6 +7,7 @@ git clone https://github.com/bruce-neveruse/gcp-lb.git
 cd gcp-lb
 sudo chmod 757 *.sh
 gcloud projects list
+
 ```
 
 ### IN CLOUD SHELL EXECUTE web-svr-install.sh
@@ -24,13 +25,20 @@ sudo nano /etc/apache2/apache2.conf
 </Directory>
 ```
 
-### CREATE CERT
+### CREATE CERT SCRIPT
 ```
 sudo mkdir /etc/apache2/certificate
 cd /etc/apache2/certificate
 sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
 ```
-
+	Country Name (2 letter code) [AU]:us
+	State or Province Name (full name) [Some-State]:pa
+	Locality Name (eg, city) []:hbg
+	Organization Name (eg, company) [Internet Widgits Pty Ltd]:hm
+	Organizational Unit Name (eg, section) []:hm
+	Common Name (e.g. server FQDN or YOUR name) []:hmlb.ddns.net
+	Email Address []:b@b.com
+	
 ### ADD HTTPS CAPABILITY TO WEB SERVER
 ```
 sudo nano /etc/apache2/sites-enabled/000-default.conf
