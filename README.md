@@ -24,7 +24,7 @@ sudo nano /etc/apache2/apache2.conf
 </Directory>
 ```
 
-### CREATE CERT SCRIPT
+### RUN CREATE CERT SCRIPT
 ```
 ./create-cert.sh
 ```
