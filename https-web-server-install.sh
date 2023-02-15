@@ -43,5 +43,5 @@ gcloud compute firewall-rules create fw-allow-health-check \
     --source-ranges=130.211.0.0/22,35.191.0.0/16 \
     --target-tags=allow-health-check \
     --enable-logging \
-    --rules=tcp:80
+    --rules=tcp:443
 
