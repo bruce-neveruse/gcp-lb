@@ -1,6 +1,8 @@
 #!/bin/bash
 export PROJECT=$(gcloud projects list --filter playground | grep 'PROJECT_ID: playground' | cut -d ":" -f2 2> /dev/null)
 export PROJECTNUM=$(gcloud projects list --filter playground | grep PROJECT_NUMBER: | cut -d ":" -f2 2> /dev/null)
+#export PROJECT="gcp-network-x-p-transit-n9l2"
+#export PROJECTNUM="253741784104"
 
 gcloud config set project $PROJECT
 
@@ -25,12 +27,12 @@ gcloud compute ssl-certificates create hmlb-cert \
 
 gcloud compute target-https-proxies create https-lb-proxy \
     --url-map=hmlb \
-    --ssl-certificates=hmlb-cert    
+    --ssl-certificates=hmlb-cert
 
 gcloud compute addresses create lb-ipv4-1 \
     --ip-version=IPV4 \
     --global
-    
+
 gcloud compute forwarding-rules create https-content-rule \
     --address=lb-ipv4-1 \
     --global \

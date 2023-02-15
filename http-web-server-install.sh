@@ -12,8 +12,8 @@ gcloud beta compute instance-templates create web-server-instance-template \
    --region=us-east4 \
    --network=default \
    --subnet=default \
-   --tags=allow-health-check,https-server,http-server \
-   --image-family=debian-9 \
+   --tags=allow-health-check,http-server \
+   --image-family=debian-11 \
    --image-project=debian-cloud \
    --metadata=startup-script='#! /bin/bash
      sudo apt-get update
@@ -28,14 +28,14 @@ gcloud beta compute instance-templates create web-server-instance-template \
 
 
 # CREATE HEALTHCHECK
-gcloud compute --project $PROJECT health-checks create https "https-healthcheck" --timeout "5" --check-interval "10" --unhealthy-threshold "3" --healthy-threshold "2" --port "443" --request-path "/"
+gcloud compute --project $PROJECT health-checks create http "http-healthcheck" --timeout "5" --check-interval "10" --unhealthy-threshold "3" --healthy-threshold "2" --port "80" --request-path "/"
 
 # CREATE INSTANCE GROUP
 gcloud beta compute instance-groups managed create web-server-instance-group-use4 --base-instance-name=web-server-instance-group-use4 --template=web-server-instance-template --size=1 --zone=us-east4-c --health-check=https-healthcheck --initial-delay=300
 gcloud beta compute instance-groups managed set-autoscaling "web-server-instance-group-use4" --zone "us-east4-c" --cool-down-period "60" --max-num-replicas "2" --min-num-replicas "1" --target-cpu-utilization "0.6" --mode "on"
 
 # CREATE FW RULES
-gcloud compute firewall-rules create allow-https-ssh-ingress --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
+gcloud compute firewall-rules create allow-http-ssh-ingress --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:80,tcp:22 --source-ranges=157.154.3.0/24 --target-tags=http-server
 gcloud compute firewall-rules create fw-allow-health-check \
     --network=default \
     --action=allow \
