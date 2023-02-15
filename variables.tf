@@ -1,0 +1,12 @@
+variable "credentials" { default = "/mnt/c/Users/lidv280/Downloads/playground-s-11-48a50a28-37274e271354.json" }
+variable "gcp_project_id" { default = "playground-s-11-48a50a28" }
+variable "vpc_network1" { default = "vpc-dmz" }
+variable "vpc_network2" { default = "vpc-app1" }
+variable "vpc_network3" { default = "vpc-app2" }
+variable "vpc_subnet_name1" { default = "net-172-20-1-0" }
+variable "vpc_subnet_name2" { default = "net-172-20-2-0" }
+variable "vpc_subnet_name3" { default = "net-172-20-3-0" }
+variable "vpc_ip_cidr1" { default = "172.20.1.0/24" }
+variable "vpc_ip_cidr2" { default = "172.20.2.0/24" }
+variable "vpc_ip_cidr3" { default = "172.20.3.0/24" }
+variable "gcp_region" { default = "us-east4" }
