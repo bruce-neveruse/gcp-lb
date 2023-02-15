@@ -12,7 +12,7 @@ gcloud projects list
 
 ### IN CLOUD SHELL EXECUTE web-svr-install.sh
 ```
-./web-server-install.sh
+./https-web-server-install.sh
 ```
 
 ###  SSH TO WEB SERVER VM FROM [COMPUTE INSTANCES](https://console.cloud.google.com/compute/instances?:target="_blank") AND UPDATE APACHE2.CONF
