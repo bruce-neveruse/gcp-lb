@@ -13,7 +13,7 @@ gcloud beta compute instance-templates create web-server-instance-template \
    --network=default \
    --subnet=default \
    --tags=allow-health-check,http-server \
-   --image-family=debian-9 \
+   --image-family=debian-11 \
    --image-project=debian-cloud \
    --metadata=startup-script='#! /bin/bash
      sudo apt-get update
