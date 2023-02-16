@@ -35,9 +35,9 @@ gcloud beta compute instance-groups managed create web-server-instance-group-use
 gcloud beta compute instance-groups managed set-autoscaling "web-server-instance-group-use4" --zone "us-east4-c" --cool-down-period "60" --max-num-replicas "2" --min-num-replicas "1" --target-cpu-utilization "0.6" --mode "on"
 
 # CREATE FW RULES
-gcloud compute firewall-rules create allow-https-ssh-ingress --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
+gcloud compute firewall-rules create allow-https-ssh-ingress --direction=INGRESS --priority=1000 --network=vpc-dmz --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
 gcloud compute firewall-rules create fw-allow-health-check \
-    --network=default \
+    --network=vpc-dmz \
     --action=allow \
     --direction=ingress \
     --source-ranges=130.211.0.0/22,35.191.0.0/16 \
