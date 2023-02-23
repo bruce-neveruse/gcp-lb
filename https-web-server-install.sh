@@ -74,7 +74,7 @@ gcloud beta compute instance-groups managed create web-server-instance-group-app
 gcloud beta compute instance-groups managed set-autoscaling "web-server-instance-group-app1" --zone "us-east4-c" --cool-down-period "60" --max-num-replicas "2" --min-num-replicas "1" --target-cpu-utilization "0.6" --mode "on"
 
 # CREATE FW RULES APP1
-gcloud compute firewall-rules create allow-https-ssh-ingress-app1 --direction=INGRESS --priority=1000 --network=vpc-dmz --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
+gcloud compute firewall-rules create allow-https-ssh-ingress-app1 --direction=INGRESS --priority=1000 --network=vpc-app1 --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
 gcloud compute firewall-rules create fw-allow-health-check-app1 \
     --network=vpc-app1 \
     --action=allow \
@@ -112,7 +112,7 @@ gcloud beta compute instance-groups managed set-autoscaling "web-server-instance
 
 
 # CREATE FW RULES APP2
-gcloud compute firewall-rules create allow-https-ssh-ingress-app2 --direction=INGRESS --priority=1000 --network=vpc-dmz --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
+gcloud compute firewall-rules create allow-https-ssh-ingress-app2 --direction=INGRESS --priority=1000 --network=vpc-app2 --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
 gcloud compute firewall-rules create fw-allow-health-check--app2 \
     --network=vpc-app2 \
     --action=allow \
