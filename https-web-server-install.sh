@@ -10,8 +10,8 @@ gcloud config set project $PROJECT
 gcloud beta compute instance-templates create web-server-instance-template \
    --machine-type=f1-micro \
    --region=us-east4 \
-   --network=default \
-   --subnet=default \
+   --network=vpc-dmz \
+   --subnet=net-172-20-1-0 \
    --tags=allow-health-check,https-server,http-server \
    --image-family=debian-11 \
    --image-project=debian-cloud \
@@ -23,7 +23,7 @@ gcloud beta compute instance-templates create web-server-instance-template \
      sudo a2enmod rewrite
      vm_hostname="$(curl -H "Metadata-Flavor:Google" \
      http://169.254.169.254/computeMetadata/v1/instance/name)"
-     echo "Page served from: $vm_hostname" | sudo tee /var/www/html/index.html
+     echo "TEST PAGE served from: $vm_hostname" | sudo tee /var/www/html/index.html
      sudo systemctl restart apache2'
 
 
@@ -35,9 +35,9 @@ gcloud beta compute instance-groups managed create web-server-instance-group-use
 gcloud beta compute instance-groups managed set-autoscaling "web-server-instance-group-use4" --zone "us-east4-c" --cool-down-period "60" --max-num-replicas "2" --min-num-replicas "1" --target-cpu-utilization "0.6" --mode "on"
 
 # CREATE FW RULES
-gcloud compute firewall-rules create allow-https-ssh-ingress --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
+gcloud compute firewall-rules create allow-https-ssh-ingress --direction=INGRESS --priority=1000 --network=vpc-dmz --action=ALLOW --rules=tcp:443,tcp:22 --source-ranges=0.0.0.0/0 --target-tags=https-server
 gcloud compute firewall-rules create fw-allow-health-check \
-    --network=default \
+    --network=vpc-dmz \
     --action=allow \
     --direction=ingress \
     --source-ranges=130.211.0.0/22,35.191.0.0/16 \

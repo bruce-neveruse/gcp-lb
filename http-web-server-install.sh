@@ -23,7 +23,7 @@ gcloud beta compute instance-templates create web-server-instance-template \
      sudo a2enmod rewrite
      vm_hostname="$(curl -H "Metadata-Flavor:Google" \
      http://169.254.169.254/computeMetadata/v1/instance/name)"
-     echo "Page served from: $vm_hostname" | sudo tee /var/www/html/index.html
+     echo "TEST PAGE served from: $vm_hostname" | sudo tee /var/www/html/index.html
      sudo systemctl restart apache2'
 
 
