@@ -11,7 +11,7 @@ gcloud beta compute instance-templates create web-server-instance-template \
    --machine-type=f1-micro \
    --region=us-east4 \
    --network=vpc-dmz \
-   --subnet=default \
+   --subnet=net-172-20-1-0 \
    --tags=allow-health-check,https-server,http-server \
    --image-family=debian-11 \
    --image-project=debian-cloud \
