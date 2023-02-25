@@ -27,8 +27,7 @@ sudo nano /etc/apache2/apache2.conf
 
 ### CREATE CERT SCRIPT
 ```
-sudo mkdir /etc/apache2/certificate
-cd /etc/apache2/certificate
+cd /etc/apache2/
 sudo openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key
 ```
 	Country Name (2 letter code) [AU]:us
@@ -47,8 +46,8 @@ sudo nano /etc/apache2/sites-enabled/000-default.conf
 ```
 <VirtualHost *:443>
         SSLEngine on
-        SSLCertificateFile /etc/apache2/certificate/apache-certificate.crt
-        SSLCertificateKeyFile /etc/apache2/certificate/apache.key
+        SSLCertificateFile /etc/apache2/apache-certificate.crt
+        SSLCertificateKeyFile /etc/apache2/apache.key
 </VirtualHost>
 ```
 ```
