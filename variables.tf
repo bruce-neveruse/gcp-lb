@@ -1,5 +1,5 @@
-variable "credentials" { default = "/mnt/c/Users/lidv280/Downloads/playground-s-11-903a1114-bcfe3f7bf4a3.json" }
-variable "gcp_project_id" { default = "playground-s-11-903a1114" }
+variable "credentials" { default = "/mnt/c/Users/lidv280/Downloads/playground-s-11-e8123af2-fe811369abf5.json" }
+variable "gcp_project_id" { default = "playground-s-11-e8123af2" }
 variable "vpc_network1" { default = "vpc-dmz" }
 variable "vpc_network2" { default = "vpc-app1" }
 variable "vpc_network3" { default = "vpc-app2" }
